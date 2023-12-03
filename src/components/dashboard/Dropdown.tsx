@@ -27,7 +27,7 @@ export default function Dropdown({
   originalCampaignData,
   parameter,
 }: IDropDown) {
-  function update(current) {
+  function update(current: string) {
     if (parameter === "platform") {
       updatePlatform(current);
     } else if (parameter === "status") {
@@ -37,22 +37,22 @@ export default function Dropdown({
     }
   }
 
-  function updatePlatform(current) {
+  function updatePlatform(current: string) {
     if (current === "All Platform") {
       setCampaignData(originalCampaignData);
     } else {
-      const filteredCampaigns = originalCampaignData.filter(
+      const filteredCampaigns = originalCampaignData!.filter(
         (campaign) => campaign.platform.toLowerCase() === current.toLowerCase(),
       );
       setCampaignData(filteredCampaigns);
     }
   }
 
-  function updateStatus(current) {
+  function updateStatus(current: string) {
     if (current === "All Status") {
       setCampaignData(originalCampaignData);
     } else {
-      const filteredCampaigns = originalCampaignData.filter(
+      const filteredCampaigns = originalCampaignData!.filter(
         (campaign) => campaign.status.toLowerCase() === current.toLowerCase(),
       );
       setCampaignData(filteredCampaigns);

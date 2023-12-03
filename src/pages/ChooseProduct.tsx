@@ -43,8 +43,8 @@ const ChooseProduct = () => {
       selections.image = "";
     } else {
       setSelectedProduct(index);
-      selections.name = products[index].name;
-      selections.image = products[index].image;
+      selections.name = products![index].name;
+      selections.image = products![index].image;
     }
   }
 
